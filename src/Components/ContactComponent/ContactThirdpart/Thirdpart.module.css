@@ -1,0 +1,43 @@
+.Thirdpart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.Parent{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 30px;
+}
+.contactus{
+    display: flex;
+    justify-content: center;
+}
+.contactus span{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.addressContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.boldtxt{
+    font-weight: bold;
+    color: gray;
+}
+.brighttxt{
+    font-weight:bolder ;
+}
+.childParent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f5f7;
+    height: 150px;  
+}

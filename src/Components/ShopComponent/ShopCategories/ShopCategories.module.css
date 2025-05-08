@@ -1,0 +1,16 @@
+.ShopCategories select{
+    width: 15%;
+    height: 30px;
+}
+.ShopCategories option{
+    color: gray;
+    
+}
+
+.optionsdiv:hover{
+    background-color: #f3f5f7 !important;
+    color: black !important;
+    display: none;
+
+
+}

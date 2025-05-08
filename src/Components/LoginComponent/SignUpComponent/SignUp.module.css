@@ -1,0 +1,40 @@
+.SignUpParent{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+    height: 100vh;
+}
+.SignUpParent img{
+    width: 400px;
+    height: 400px;
+}
+.imgdiv{
+    display: flex;
+    justify-content: center;
+    background-color: #f3f5f7;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+
+}
+.SignUp{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    gap: 30px;
+}
+.inputParent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.signupboldtxt{
+    font-size: 3rem;
+    font-weight: bold;
+}
+.signuptxt{
+    color: green;
+    cursor: pointer;
+
+}

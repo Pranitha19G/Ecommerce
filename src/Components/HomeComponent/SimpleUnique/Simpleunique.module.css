@@ -1,0 +1,32 @@
+.ParenttextContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.textContainer{
+    display: flex;
+    width: 80%;
+justify-content: space-between;
+align-items: center;
+
+}
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.left span{
+    font-size: 60px;
+    font-weight: bold;
+}
+.symbol{
+    color: gray;
+}
+  
+.right span{
+   font-weight: 600;
+   color: black;
+}
+.right p{
+    color: gray;
+}

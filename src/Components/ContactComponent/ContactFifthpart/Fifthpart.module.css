@@ -1,0 +1,32 @@
+.Fifthpart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #f3f5f7;
+
+}
+.Parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    padding: 30px 30px;
+
+}
+.divParent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.icon{
+    font-size: 30px;
+}
+.graytxt{
+ color: gray;
+}
+.blacktxt{
+    font-weight: 500;
+    font-size: 20px;
+}

@@ -1,0 +1,77 @@
+.navParent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    width: 80%;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .navItems {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }
+  
+  .navItems a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .icons {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  .cartParent{
+    position: relative;
+  }
+  .cartParent span{
+    position: absolute;
+    top: -15px;
+    left: 10px;
+  }
+  @media (max-width: 768px) {
+    .navItems {
+      position: absolute;
+      top: 70px;
+      left: 0;
+      background: white;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      padding: 20px 0;
+      display: none;
+    }
+  
+    .navItems.showMenu {
+      display: flex;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .icons {
+      gap: 15px;
+    }
+  }
+  

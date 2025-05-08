@@ -1,0 +1,34 @@
+.SecondPart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.Parentdiv{
+ margin-top: 30px;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  background-color: #f3f5f7;
+}
+img{
+    width: 100%;
+}
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.boldtxt{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.normaltxt p{
+    margin: 0;
+}
+.underlinetxt{
+    text-decoration: underline;
+}

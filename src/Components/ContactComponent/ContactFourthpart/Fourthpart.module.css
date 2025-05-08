@@ -1,0 +1,40 @@
+.Fourthpart{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.container{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 10px;
+}
+.leftside{
+    display: flex;
+    flex-direction: column;
+    /* background-color: #f3f5f7; */
+    gap: 30px;
+    justify-content: center;
+}
+.labelpart{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.labelpart label{
+    font-size: 14px;
+    color: gray;
+    font-weight: bold;
+}
+.labelpart textarea{
+    height: 100px;
+}
+.labelpart input{
+    height: 30px;
+}
+.labelpart button{
+    height: 30px;
+    background-color: black;
+    color: white;
+}

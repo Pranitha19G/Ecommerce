@@ -1,0 +1,35 @@
+.Parentcont{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    width: 100%;
+    background-color: #f3f5f7;
+    gap: 20px;
+}
+.cont1 img{
+    width: 100%;
+}
+.cont2{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+.bluetxt{
+    color: rgb(43, 148, 219);
+    font-weight: bold;
+}
+.halfcont1{
+    display: flex;
+    flex-direction: column;
+    font-size: 3rem;
+    font-weight:600;
+}
+.halfcont2{
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+}
+.shopnowtxt{
+    text-decoration: underline;
+}

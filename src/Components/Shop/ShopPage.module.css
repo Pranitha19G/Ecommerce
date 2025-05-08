@@ -1,0 +1,40 @@
+.mainContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    place-items: center;
+    width: 100%;
+}
+.Parent{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.image{
+    border: 1px solid #f3f5f7;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img{
+ width: 100px;
+ height: 100px;
+}
+.ratings{
+    display: flex;
+    justify-content: space-between;
+}
+.productname{
+    display: flex;
+    justify-content: space-between;
+}
+.cartcount{
+   position: relative; 
+}
+.cartcount span{
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    font-size: 10px;
+}
