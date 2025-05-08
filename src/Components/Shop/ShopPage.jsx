@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { products } from "../../Utils/Utils";
 import styles from "./ShopPage.module.css";
 import { Rating } from "@smastrom/react-rating";
@@ -14,7 +14,11 @@ export default function ShopPage() {
   const [shopcartdata, setShopcartdata]=useState([])
   const {setCart} =useContext(CartContext)
   const{ category}=useContext(CategoryContext);
+  const {state:rooms}= useLocation();
+  console.log("rooms",rooms);
 
+
+  
   const [count, setCount] = useState(0);
   const addtocartfun = (index,items) => {
     setCount((prev) => ({

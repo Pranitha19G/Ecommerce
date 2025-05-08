@@ -4,7 +4,7 @@ import NooriRug from "../assets/Livingroom/NooriRug.jpg";
 import HomePopMetal from "../assets/Livingroom/HomePopMetal.jpg";
 import CasualHome from "../assets/Livingroom/CasualHome.jpg";
 import JenniferTaylor from "../assets/Livingroom/JenniferTaylor.jpg";
-import CasalivingRolandoWood4SeaterLShapeSofa from "../assets/home/CasalivingRolandoWood4SeaterLShapeSofa.png";
+import CasalivingRolandoWood4SeaterLShapeSofa from "../assets/home/CasalivingRolandoWood4SeaterLShapeSofa.jpg";
 import WakefitLumaraThreeSeaterSofa from "../assets/home/WakefitLumaraThreeSeaterSofa.png";
 import HONBAYModernUShapedModularSofaSet from "../assets/home/HONBAYModernUShapedModularSofaSet.png";
 import GiovanniGrayLivingRoomSet from "../assets/home/GiovanniGrayLivingRoomSet.png";
