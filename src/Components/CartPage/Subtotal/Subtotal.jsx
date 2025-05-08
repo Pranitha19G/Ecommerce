@@ -6,15 +6,17 @@ export default function Subtotal() {
   const getcartData = JSON.parse(localStorage.getItem("cartData"));
 
   const grandTotal = getcartData.reduce((acc, val) => {
-    return acc + val.price;
-  }, 0);
+    console.log("val", acc);
+    
+    return acc + Number(val.price);
+  },0);
 
   return (
     <div className={styles.Parent}>
       <div className={styles.cartPage}>
         <div className={styles.totaldiv}>
           <h2>SubTotal</h2>
-          <div className={styles.grandTotal}>{grandTotal}</div>
+          <div className={styles.grandTotal}>₹{grandTotal}</div>
         </div>
         <Button variant="contained">Checkout </Button>
       </div>

@@ -25,9 +25,9 @@ export default function CartPage() {
             <img src={items.products_image} alt="img" />
           </div>
           <div>{items.product_name}</div>
-          <div>{items.price}</div>
+          <div>₹{items.price}</div>
           <div>{productCount[items.product_name]}</div>
-          <div>{productCount[items.product_name] * items.price}</div>
+          <div>₹{productCount[items.product_name] * items.price}</div>
         </div>
       ))}
     </div>

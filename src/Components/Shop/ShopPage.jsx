@@ -8,18 +8,28 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import CategoryContext from "../Contexts/CatergoryContext/CategoryContext";
 import CartContext from "../Contexts/CartContext/CartContext";
+import ShopContext from "../Contexts/ShopContext/ShopContext";
 
 export default function ShopPage() {
   const [updated, setUpdated]=useState("");
+  const {inputContext, setInputContext}=useContext(ShopContext);
+  const [shopProducts,setShopProducts]=useState(products)
   const [shopcartdata, setShopcartdata]=useState([])
   const {setCart} =useContext(CartContext)
   const{ category}=useContext(CategoryContext);
   const {state:rooms}= useLocation();
   console.log("rooms",rooms);
-
-
-  
   const [count, setCount] = useState(0);
+
+ useEffect(()=>{
+  const searchedImage= products.filter((val)=>(
+    val.product_name===inputContext
+  ))
+  //  setShopProducts(searchedImage)
+  console.log("searchedImage",searchedImage);
+  
+ },[inputContext])
+        
   const addtocartfun = (index,items) => {
     setCount((prev) => ({
       ...prev,
@@ -40,10 +50,13 @@ export default function ShopPage() {
    console.log("fp",filteredProducts); 
     setUpdated(filteredProducts);
     
+    
   }, [category])
+
+  console.log("InputContext", inputContext)
   return (
     <div className={styles.mainContainer}>
-    {(updated?.length ? updated : products || []).map((items,i) => (
+    {(updated?.length ? updated : shopProducts || []).map((items,i) => (
         <div key={i} className={styles.Parent}>
           <div className={styles.image}>
             <img src={items.products_image} alt="img" />
@@ -62,7 +75,7 @@ export default function ShopPage() {
             <div>
               <Rating style={{ maxWidth: 60 }} value={items.rating} />
             </div>
-            <div>{items.price}</div>
+            <div>₹{items.price}</div>
           </div>
         </div>
       ))}

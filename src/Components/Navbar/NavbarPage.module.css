@@ -48,6 +48,15 @@
     top: -15px;
     left: 10px;
   }
+  .searchParent{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .SearchInput{
+    position: absolute;
+    top: 100%;
+  }
   @media (max-width: 768px) {
     .navItems {
       position: absolute;

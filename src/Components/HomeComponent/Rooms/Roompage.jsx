@@ -16,7 +16,7 @@ export default function Roompage() {
         <div className={styles.leftsideParent}>
           <div className={styles.txt}>
             <span>Living Room</span>
-            <span className={styles.shopnow}onClick={()=>shopnowfun("living room")}>Shop Now</span>
+            <span className={styles.shopnow}onClick={()=>shopnowfun("Living Room")}>Shop Now</span>
           </div>
           <div className={styles.imgpart}>
             <img src={category1} alt="c1"></img>
@@ -26,7 +26,7 @@ export default function Roompage() {
           <div className={styles.firstpart}>
             <div className={styles.innerleft}>
               <span>Bed Room</span>
-              <span className={styles.shopnow}onClick={()=>shopnowfun("Bed room")}>Shop Now</span>
+              <span className={styles.shopnow}onClick={()=>shopnowfun("Bed Room")}>Shop Now</span>
             </div>
             <div className={styles.innerright}>
               <img src={category3} alt="c3"></img>

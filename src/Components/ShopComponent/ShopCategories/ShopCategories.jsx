@@ -33,14 +33,14 @@ export default function ShopCategories() {
 
   return (
     <div className={styles.ShopCategories}>
-      <select onChange={selectfun} value={"Kitchen"}>
-        {/* <option className={styles.optionsdiv} value="all">
+      <select onChange={selectfun} value={selectCategory}>
+        <option className={styles.optionsdiv} value="all">
           All
-        </option> */}
+        </option>
         {category2?.map((item, i) => (
           <option
             className={styles.optionsdiv}
-            value={rooms ? rooms : item.category}
+            value={item.category}
           >
             {item.category}
           </option>

@@ -12,6 +12,7 @@ import CartContextprovider from "./Components/Contexts/CartContext/CartContextpr
 import CartPage from "./Components/CartPage/CartPage/CartPage";
 import CartConnected from "./Components/CartPage/CartConnected/CartConnected";
 import BlogConnected from "./Components/BlogConnected/BlogConnected";
+import ShopContextprovider from "./Components/Contexts/ShopContext/ShopContextprovider";
 
 function App() {
   const location = useLocation();
@@ -20,6 +21,7 @@ function App() {
   const isLogin = location.pathname === "/Login";
   return (
     <>
+    <ShopContextprovider>
       <CartContextprovider>
         {isLogin ? "" : <NavbarPage />}
         <CategoryContextprovider>
@@ -34,6 +36,7 @@ function App() {
         </CategoryContextprovider>
         {isLogin ? "" : <Footerdiv />}
       </CartContextprovider>
+      </ShopContextprovider>
     </>
   );
 }

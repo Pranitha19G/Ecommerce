@@ -1,13 +1,17 @@
 .mainContainer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    place-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
     width: 100%;
 }
 .Parent{
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 200px;
+    margin: 5px;
 }
 .image{
     border: 1px solid #f3f5f7;
@@ -16,6 +20,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color:#f3f5f7;
+    border-radius: 10px 0 10px 0;
 }
 .image img{
  width: 100px;
@@ -28,6 +34,7 @@
 .productname{
     display: flex;
     justify-content: space-between;
+    gap: 15px;
 }
 .cartcount{
    position: relative; 

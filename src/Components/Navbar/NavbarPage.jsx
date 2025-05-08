@@ -9,8 +9,10 @@ import {
   faBars,
 } from "@fortawesome/free-solid-svg-icons";
 import CartContext from "../Contexts/CartContext/CartContext";
+import SearchInput from "../SearchInput/SearchInput";
 
 export default function NavbarPage() {
+  const [showSearchbar, setShowSearchbar]=useState(false)
   const navigation=useNavigate();
   const {cart}=useContext(CartContext);
   const cartlength=JSON.parse(localStorage.getItem('cartData'))
@@ -21,6 +23,9 @@ export default function NavbarPage() {
   }
   const cartPage=()=>{
     navigation('/cartPage')
+  }
+  const showSearchbarFun=()=>{
+    setShowSearchbar((prev)=>!prev)
   }
 
   return (
@@ -48,7 +53,14 @@ export default function NavbarPage() {
       </ul>
 
       <div className={styles.icons}>
+        <div className={styles.searchParent}>
+        <div onClick={showSearchbarFun}>
         <FontAwesomeIcon icon={faMagnifyingGlass} />
+        </div>
+        <div className={styles.SearchInput}>
+        {showSearchbar?<SearchInput/>:""}
+        </div>
+        </div>
         {successdata==='success'?<>
           <FontAwesomeIcon icon={faUser} />
           <div className={styles.cartParent} onClick={()=>cartPage()}>
