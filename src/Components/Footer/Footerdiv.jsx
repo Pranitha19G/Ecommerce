@@ -36,9 +36,16 @@ export default function Footerdiv() {
             </div>
           </div>
           <div className={styles.icons}>
-           <FontAwesomeIcon icon={faInstagram} />
-            <FontAwesomeIcon icon={faFacebook} />
-            <FontAwesomeIcon icon={faYoutube} />
+            <a href="https://instagram.com" target="_blank">
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+            <a href="https://facebook.com" target="_blank">
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+
+            <a href="https://youtube.com" target="_blank">
+              <FontAwesomeIcon icon={faYoutube} />
+            </a>
           </div>
         </div>
       </div>

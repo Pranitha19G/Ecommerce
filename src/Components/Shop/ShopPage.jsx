@@ -11,52 +11,59 @@ import CartContext from "../Contexts/CartContext/CartContext";
 import ShopContext from "../Contexts/ShopContext/ShopContext";
 
 export default function ShopPage() {
-  const [updated, setUpdated]=useState("");
-  const {inputContext, setInputContext}=useContext(ShopContext);
-  const [shopProducts,setShopProducts]=useState(products)
-  const [shopcartdata, setShopcartdata]=useState([])
-  const {setCart} =useContext(CartContext)
-  const{ category}=useContext(CategoryContext);
-  const {state:rooms}= useLocation();
-  console.log("rooms",rooms);
-  const [count, setCount] = useState(0);
+  const [updated, setUpdated] = useState("");
+  const { inputContext, setInputContext } = useContext(ShopContext);
+  const [shopcartdata, setShopcartdata] = useState([]);
+  const [shopProducts, setShopProducts] = useState(products);
 
- useEffect(()=>{
-  const searchedImage= products.filter((val)=>(
-    val.product_name===inputContext
-  ))
-  //  setShopProducts(searchedImage)
-  console.log("searchedImage",searchedImage);
-  
- },[inputContext])
-        
-  const addtocartfun = (index,items) => {
+  const { setCart } = useContext(CartContext);
+  const { category } = useContext(CategoryContext);
+  const { state: rooms } = useLocation();
+  console.log("rooms", rooms);
+  const [count, setCount] = useState(0);
+  const [currentPage, setCurrentPage] = useState(1);
+  const filteredList = updated?.length?updated:shopProducts
+  const totalPages = Math.ceil(filteredList.length / 15);
+
+  const startIndex = currentPage - 1 * 15;
+  const currentItems = filteredList.slice(startIndex, startIndex + 15);
+
+
+  useEffect(() => {
+    const searchedImage = products.filter((val) =>
+      val.product_name.toLowerCase().includes(inputContext.toLowerCase())
+    );
+    setShopProducts(searchedImage);
+    console.log("searchedImage", searchedImage);
+  }, [inputContext]);
+
+  const addtocartfun = (index, items) => {
     setCount((prev) => ({
       ...prev,
       [index]: (prev[index] || 0) + 1,
     }));
-    console.log("items",items);
-    const newArray=[...shopcartdata]
-    newArray.push(items)
+    console.log("items", items);
+    const newArray = [...shopcartdata];
+    newArray.push(items);
     setShopcartdata(newArray);
-    console.log("set",newArray);
-    setCart(newArray)
-    localStorage.setItem('cartData',JSON.stringify(newArray))
-
+    console.log("set", newArray);
+    setCart(newArray);
+    localStorage.setItem("cartData", JSON.stringify(newArray));
   };
 
-  useEffect(()=>{
-   const filteredProducts= products.filter(products=>products.category===category);
-   console.log("fp",filteredProducts); 
+  useEffect(() => {
+    const filteredProducts = products.filter(
+      (products) => products.category === category
+    );
+    console.log("fp", filteredProducts);
     setUpdated(filteredProducts);
-    
-    
-  }, [category])
+  }, [category]);
 
-  console.log("InputContext", inputContext)
+  console.log("InputContext", inputContext);
   return (
+    <>
     <div className={styles.mainContainer}>
-    {(updated?.length ? updated : shopProducts || []).map((items,i) => (
+      {currentItems.map((items, i) => (
         <div key={i} className={styles.Parent}>
           <div className={styles.image}>
             <img src={items.products_image} alt="img" />
@@ -64,7 +71,7 @@ export default function ShopPage() {
           <div className={styles.productname}>
             <div>{items.product_name}</div>
             <div className={styles.cartcount}>
-              <div onClick={() => addtocartfun(i,items)}>
+              <div onClick={() => addtocartfun(i, items)}>
                 <FontAwesomeIcon icon={faCartShopping} />
               </div>
               <span>{count[i] || ""}</span>
@@ -80,5 +87,11 @@ export default function ShopPage() {
         </div>
       ))}
     </div>
+    <div>
+      {[...Array(totalPages)].map((val,i)=>(
+        <button onClick={()=>handleOnclick(i+1)}>{i+1}</button>
+      ))}
+    </div>
+    </>
   );
 }

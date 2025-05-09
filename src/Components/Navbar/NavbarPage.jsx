@@ -1,5 +1,5 @@
-import React, { useContext, useState } from "react";
-import { Link,useNavigate } from "react-router-dom";
+import React, { useContext, useState,useEffect} from "react";
+import { Link,useNavigate, useLocation} from "react-router-dom";
 import styles from "./NavbarPage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -18,6 +18,18 @@ export default function NavbarPage() {
   const cartlength=JSON.parse(localStorage.getItem('cartData'))
   const [menuOpen, setMenuOpen] = useState(false);
   const successdata=(localStorage.getItem('login'));
+  const [activelink, setActivelink] = useState("");
+
+
+  const Location = useLocation();
+  console.log("location", Location.pathname);
+ 
+  
+  useEffect(() => {
+    setActivelink(Location.pathname);
+  }, [Location]);
+
+
   const loginfun=()=>{
     navigation('/login')
   }
@@ -39,16 +51,16 @@ export default function NavbarPage() {
 
       <ul className={`${styles.navItems} ${menuOpen ? styles.showMenu : ""}`}>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/"  className={`${activelink === "/" ? styles.active : ""}`}>Home</Link>
         </li>
         <li>
-          <Link to="/shop">Shop</Link>
+          <Link to="/shop"  className={`${activelink === "/shop" ? styles.active : ""}`}>Shop</Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog"  className={`${activelink === "/blog" ? styles.active : ""}`}>Blog</Link>
         </li>
         <li>
-          <Link to="/Contact">ContactUs</Link>
+          <Link to="/contact"  className={`${activelink === "/contact" ? styles.active : ""}`}>Contact Us</Link>
         </li>
       </ul>
 

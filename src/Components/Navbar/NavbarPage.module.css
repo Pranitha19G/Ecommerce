@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "poppins";
+  src: url("../src/assets/Poppins-Bold.ttf");
+}
+*{
+  font-family: "poppins", sans-serif;
+}
 .navParent{
     width: 100%;
     display: flex;
@@ -27,9 +34,14 @@
   .navItems a {
     text-decoration: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 18px;
+    color: rgb(108,114,117);
+    font-weight: 600;
+
   }
-  
+  .active{
+    color: #000000 !important;
+  }
   .icons {
     display: flex;
     gap: 20px;

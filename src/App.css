@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "poppins";
+  src: url("../src/assets/Poppins-Bold.ttf");
+}
+
+
+
+a{
+  font-family: "poppins", sans-serif;
+}
+
+
+
+
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

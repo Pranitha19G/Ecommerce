@@ -1,8 +1,14 @@
 import React from "react";
 import styles from "./Livingroompage.module.css";
 import img4 from '../../../assets/img4.jpg';
+import { useNavigate } from "react-router-dom";
 
 export default function Livingroompage() {
+
+  const navigation= useNavigate();
+   const shopnowfun=()=>{
+    navigation("/shop")
+  }
   return (
     <div>
       <div className={styles.Parentcont}>
@@ -20,7 +26,7 @@ export default function Livingroompage() {
             <span> to give every room in your home a
             stylish makeover </span>
           </span>
-          <span className={styles.shopnowtxt}>Shop Now</span>
+          <span className={styles.shopnowtxt} onClick={()=>shopnowfun("All")}>Shop Now</span>
         </div>
       </div>
     </div>
