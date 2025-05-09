@@ -45,3 +45,14 @@
     left: 10px;
     font-size: 10px;
 }
+.paginationdiv{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 100px;
+
+}
+.paginationdiv button{
+    margin: 0 5px;
+    border: 0.5px;
+}

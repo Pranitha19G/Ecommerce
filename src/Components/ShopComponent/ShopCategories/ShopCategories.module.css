@@ -1,3 +1,18 @@
+.parentShopCategories{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+
+.ShopCategories{
+    width: 82%;
+    margin: 10px 0;
+}
+
+
+
 .ShopCategories select{
     width: 15%;
     height: 30px;

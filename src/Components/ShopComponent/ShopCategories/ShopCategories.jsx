@@ -32,6 +32,7 @@ export default function ShopCategories() {
   };
 
   return (
+    <div className={styles.parentShopCategories}>
     <div className={styles.ShopCategories}>
       <select onChange={selectfun} value={selectCategory}>
         <option className={styles.optionsdiv} value="all">
@@ -46,6 +47,7 @@ export default function ShopCategories() {
           </option>
         ))}
       </select>
+    </div>
     </div>
   );
 }

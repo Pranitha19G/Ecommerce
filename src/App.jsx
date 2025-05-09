@@ -13,6 +13,7 @@ import CartPage from "./Components/CartPage/CartPage/CartPage";
 import CartConnected from "./Components/CartPage/CartConnected/CartConnected";
 import BlogConnected from "./Components/BlogConnected/BlogConnected";
 import ShopContextprovider from "./Components/Contexts/ShopContext/ShopContextprovider";
+import ProductDetails from "./Components/ShopComponent/ProductDetails/ProductDetails";
 
 function App() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
             <Route path="/contact" element={<ContactpageConnected />}></Route>
             <Route path="/Login" element={<LoginComponentConnected />}></Route>
             <Route path="/cartpage" element={<CartConnected />}></Route>
+            <Route path="/productDetails/:id" element={<ProductDetails/>}></Route>
           </Routes>
         </CategoryContextprovider>
         {isLogin ? "" : <Footerdiv />}

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { products } from "../../Utils/Utils";
 import styles from "./ShopPage.module.css";
 import { Rating } from "@smastrom/react-rating";
@@ -22,12 +22,15 @@ export default function ShopPage() {
   console.log("rooms", rooms);
   const [count, setCount] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const filteredList = updated?.length?updated:shopProducts
+  const filteredList = updated?.length ? updated : shopProducts;
   const totalPages = Math.ceil(filteredList.length / 15);
 
-  const startIndex = currentPage - 1 * 15;
+  const startIndex = (currentPage - 1) * 15;
   const currentItems = filteredList.slice(startIndex, startIndex + 15);
 
+  const handleOnclick = (page) => {
+    setCurrentPage(page);
+  };
 
   useEffect(() => {
     const searchedImage = products.filter((val) =>
@@ -60,38 +63,55 @@ export default function ShopPage() {
   }, [category]);
 
   console.log("InputContext", inputContext);
+  const navigation= useNavigate();
+
+  const productDetails=(id)=>{
+    navigation(`/productDetails/${id}`)
+    
+  }
   return (
     <>
-    <div className={styles.mainContainer}>
-      {currentItems.map((items, i) => (
-        <div key={i} className={styles.Parent}>
-          <div className={styles.image}>
-            <img src={items.products_image} alt="img" />
-          </div>
-          <div className={styles.productname}>
-            <div>{items.product_name}</div>
-            <div className={styles.cartcount}>
-              <div onClick={() => addtocartfun(i, items)}>
-                <FontAwesomeIcon icon={faCartShopping} />
+      <div className={styles.mainContainer}>
+        {currentItems.map((items, i) => (
+          <div key={i} className={styles.Parent} onClick={()=>productDetails(items.id)}>
+            <div className={styles.image}>
+              <img src={items.products_image} alt="img" />
+            </div>
+            <div className={styles.productname}>
+              <div>{items.product_name}</div>
+              <div className={styles.cartcount}>
+                <div onClick={() => addtocartfun(i, items)}>
+                  <FontAwesomeIcon icon={faCartShopping} />
+                </div>
+                <span>{count[i] || ""}</span>
               </div>
-              <span>{count[i] || ""}</span>
             </div>
-          </div>
 
-          <div className={styles.ratings}>
-            <div>
-              <Rating style={{ maxWidth: 60 }} value={items.rating} />
+            <div className={styles.ratings}>
+              <div>
+                <Rating style={{ maxWidth: 60 }} value={items.rating} />
+              </div>
+              <div>₹{items.price}</div>
             </div>
-            <div>₹{items.price}</div>
           </div>
-        </div>
-      ))}
-    </div>
-    <div>
-      {[...Array(totalPages)].map((val,i)=>(
-        <button onClick={()=>handleOnclick(i+1)}>{i+1}</button>
-      ))}
-    </div>
+        ))}
+      </div>
+      <div className={styles.paginationdiv}>
+        <button onClick={() => handleOnclick(currentPage - 1)}>prev</button>
+        {[...Array(totalPages)].map((val, i) => (
+          <button
+            style={{
+              backgroundColor: currentPage === i + 1 ? "lightcoral" : "white",
+              fontWeight: currentPage === i + 1 ? "bold" : "normal",
+              color: currentItems === i + 1 ? "white" : "black",
+            }}
+            onClick={() => handleOnclick(i + 1)}
+          >
+            {i + 1}
+          </button>
+        ))}
+        <button onClick={() => handleOnclick(currentPage + 1)}>next</button>
+      </div>
     </>
   );
 }
