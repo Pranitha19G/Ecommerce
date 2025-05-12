@@ -28,3 +28,14 @@
   font-size: 1rem;
   margin: 0;
 }
+@media (max-width: 768px) {
+  .parentdiv {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .normaltxt p {
+    font-weight: 200;
+    font-size: 1rem;
+    margin: 0;
+  }
+}

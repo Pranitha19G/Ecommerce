@@ -41,3 +41,15 @@
     background-color: #f3f5f7;
     height: 150px;  
 }
+@media (max-width:768px) {
+    .addressContainer{
+        display: flex;
+        flex-direction: column;
+    }
+    .childParent{
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+    }
+    
+}

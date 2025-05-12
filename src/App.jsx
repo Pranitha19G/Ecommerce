@@ -14,6 +14,9 @@ import CartConnected from "./Components/CartPage/CartConnected/CartConnected";
 import BlogConnected from "./Components/BlogConnected/BlogConnected";
 import ShopContextprovider from "./Components/Contexts/ShopContext/ShopContextprovider";
 import ProductDetails from "./Components/ShopComponent/ProductDetails/ProductDetails";
+import WishListContextprovider from "./Components/Contexts/WishListContext/WishListContextprovider";
+import WishList from "./Components/CartPage/WishList/WishList";
+import OrderDetails from "./Components/OrderDetails/OrderDetails";
 
 function App() {
   const location = useLocation();
@@ -22,6 +25,7 @@ function App() {
   const isLogin = location.pathname === "/Login";
   return (
     <>
+    <WishListContextprovider>
     <ShopContextprovider>
       <CartContextprovider>
         {isLogin ? "" : <NavbarPage />}
@@ -34,11 +38,16 @@ function App() {
             <Route path="/Login" element={<LoginComponentConnected />}></Route>
             <Route path="/cartpage" element={<CartConnected />}></Route>
             <Route path="/productDetails/:id" element={<ProductDetails/>}></Route>
+            <Route path="/wishList" element={<WishList/>}></Route>
+            <Route path="/orderdetails" element={<OrderDetails/>}></Route>
+
+
           </Routes>
         </CategoryContextprovider>
         {isLogin ? "" : <Footerdiv />}
       </CartContextprovider>
       </ShopContextprovider>
+      </WishListContextprovider>
     </>
   );
 }

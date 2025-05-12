@@ -1,0 +1,28 @@
+.wishListContainer{
+    display: flex;
+     flex-direction: column;
+     width: 100%;
+     gap: 20px;
+     
+}
+.wishlistparent{
+    width: 100%;
+    background-color: #f3f5f7;
+    display: flex;
+    justify-content: center;
+    
+
+}
+.wishlist{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.wishlist img{
+ width: 100px;
+
+}

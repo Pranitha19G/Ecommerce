@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState,  } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styles from "./HomePage.module.css";
 import img1 from  "../../../assets/img1.jpg";
 import img2 from "../../../assets/img2.jpg";
@@ -19,6 +21,10 @@ export default function HomePage() {
   const dotFun = (index) => {
     setImageIndex(index);
   };
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
   return (
     <>

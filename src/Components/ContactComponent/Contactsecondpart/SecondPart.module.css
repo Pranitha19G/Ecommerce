@@ -1,12 +1,10 @@
-.SecondPart{
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.SecondPart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
-
-
-.Parentdiv{
- margin-top: 30px;
+.Parentdiv {
+  margin-top: 30px;
   width: 80%;
   display: flex;
   justify-content: center;
@@ -14,21 +12,34 @@
   gap: 30px;
   background-color: #f3f5f7;
 }
-img{
-    width: 100%;
+img {
+  width: 100%;
 }
-.textContainer{
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.boldtxt {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.normaltxt p {
+  margin: 0;
+}
+.underlinetxt {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .SecondPart {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .Parentdiv {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-.boldtxt{
-    font-size: 2rem;
-    font-weight: bold;
-}
-.normaltxt p{
-    margin: 0;
-}
-.underlinetxt{
-    text-decoration: underline;
+    width: 100%;
+  }
+  
 }

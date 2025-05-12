@@ -9,12 +9,25 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import CategoryContext from "../Contexts/CatergoryContext/CategoryContext";
 import CartContext from "../Contexts/CartContext/CartContext";
 import ShopContext from "../Contexts/ShopContext/ShopContext";
-
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import WishListContext from "../Contexts/WishListContext/WishListContext";
 export default function ShopPage() {
   const [updated, setUpdated] = useState("");
   const { inputContext, setInputContext } = useContext(ShopContext);
   const [shopcartdata, setShopcartdata] = useState([]);
   const [shopProducts, setShopProducts] = useState(products);
+  const [wishlistadded, setWishlistadded] = useState(
+    ()=>{
+      const stored= localStorage.getItem("wishList");
+      return stored?JSON.parse(stored):[]
+    }
+  );
+  useEffect(()=>{
+    localStorage.setItem("wishList",JSON.stringify(wishlistadded))
+
+  },[wishlistadded])
+  const {setWishListArray} =useContext(WishListContext);
 
   const { setCart } = useContext(CartContext);
   const { category } = useContext(CategoryContext);
@@ -52,6 +65,7 @@ export default function ShopPage() {
     console.log("set", newArray);
     setCart(newArray);
     localStorage.setItem("cartData", JSON.stringify(newArray));
+    
   };
 
   useEffect(() => {
@@ -63,18 +77,48 @@ export default function ShopPage() {
   }, [category]);
 
   console.log("InputContext", inputContext);
-  const navigation= useNavigate();
+  const navigation = useNavigate();
 
-  const productDetails=(id)=>{
-    navigation(`/productDetails/${id}`)
-    
-  }
+  const productDetails = (id, items) => {
+    navigation(`/productDetails/${id}`, { state: items });
+  };
+
+  const wishlistArrayfun = (e, id) => {
+    e.stopPropagation();
+    console.log("wishlistadded",id);
+    setWishlistadded((prev) =>
+      prev.includes(id) ? prev.filter((val) => val !== id) : [...prev, id]
+
+    );
+    console.log("wishlistadded",wishlistadded);
+    // localStorage.setItem("wishListData", JSON.stringify(wishlistadded));
+
+    // setWishListArray((prev) =>
+    //   prev.includes(id) ? prev.filter((val) => val !== id) : [...prev, id]
+
+    // );
+  };
+  useEffect(()=>{
+    setWishListArray(wishlistadded)
+
+  },[wishlistadded])
+
   return (
     <>
       <div className={styles.mainContainer}>
         {currentItems.map((items, i) => (
-          <div key={i} className={styles.Parent} onClick={()=>productDetails(items.id)}>
-            <div className={styles.image}>
+          <div key={i} className={styles.Parent}>
+            <div
+              className={styles.image}
+              onClick={() => productDetails(items.id, items)}
+            >
+              <div
+                className={styles.wishListicon}
+                onClick={(e) => wishlistArrayfun(e, items.id)}
+              >
+                {wishlistadded.includes(items.id) ? <FavoriteIcon sx={{color:"orange"}}/> : <FavoriteBorderIcon />}
+              </div>
+
               <img src={items.products_image} alt="img" />
             </div>
             <div className={styles.productname}>

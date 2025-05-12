@@ -30,3 +30,18 @@
     font-weight: 500;
     font-size: 20px;
 }
+@media (max-width:768px) {
+    .Parent{
+        display: flex;
+    flex-direction: column;
+    gap: 10px;
+    }
+    .Fifthpart{
+    background-color: transparent;
+
+    }
+    .divParent{
+        background-color: #f3f5f7;
+        padding: 5px;
+    }
+}

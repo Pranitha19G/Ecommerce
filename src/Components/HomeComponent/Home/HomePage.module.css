@@ -1,49 +1,77 @@
-.carouselContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.carouselContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
-.carouselContainer img{
-    width: 80vw;
-    height: 75vh;
+.carouselContainer img {
+  width: 80vw;
+  height: 75vh;
 }
-.imagecontainer{
- position: relative;
+.imagecontainer {
+  position: relative;
 }
-.arrowbtnParent{
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    width: 78%;
+.arrowbtnParent {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  width: 78%;
+}
+.arrowbtn {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.arrowbtn svg {
+  width: 18px;
+}
+.parentdot {
+  position: absolute;
+  bottom: 18%;
+  display: flex;
+  gap: 5px;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.active {
+  width: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
 
-}
-.arrowbtn{
-    background-color: #fff;
+@media (max-width: 768px) {
+  .carouselContainer img {
+    width: 90vw;
+    height: 50vh;
+  }
+  .arrowbtnParent {
+    width: 95%;
+    padding: 0 5px;
+  }
+  .arrowbtn {
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
+  }
+  .arrowbtn svg {
+    width: 16px;
+  }
+  .parentdot {
+    gap: 6px;
+    bottom: 8%;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  .active {
+    width: 20px;
+  }
 }
-.arrowbtn svg{
-    width: 18px;
-}
-.parentdot{
-    position: absolute;
-    bottom: 18%;
-    display: flex;
-    gap: 5px;
-}
-.dot{
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-}
-.active{
-    width: 30px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-

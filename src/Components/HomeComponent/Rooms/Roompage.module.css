@@ -70,3 +70,42 @@
     width: 200px;
     height: 200px;
 }
+@media (max-width: 768px) {
+    .shopnowContainer {
+        grid-template-columns: 1fr; 
+        width: 90vw; 
+        gap: 20px; 
+    }
+    .leftsideParent .txt {
+        margin-top: 20px;
+        margin-left: 15px;
+        gap: 15px;
+    }
+    .leftsideParent img {
+        width: 100%; 
+    }
+    .rightsideParent {
+        gap: 20px;
+    }
+    .rightsideParent img {
+        width: 40%; 
+        align-self: center; 
+    }
+    .firstpart,
+    .secondpart {
+        flex-direction: column; 
+        align-items: center;
+        gap: 20px;
+        height: auto; 
+    }
+    .innerleft,
+    .innerright {
+        width: 100%; 
+        margin-left: 0;
+        margin-bottom: 10px;
+        text-align: center; 
+    }
+    .innerright img {
+        width: 150px; 
+        height: auto; }
+}

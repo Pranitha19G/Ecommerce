@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from "./Simpleunique.module.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+
 
 export default function Simpleunique() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
   return (
     <div className={styles.ParenttextContainer}>
       <div className={styles.textContainer}>
-        <div className={styles.left}>
+        <div className={styles.left} data-aos="fade-up">
           <span>
             Simply Unique
             <span className={styles.symbol}>/</span>

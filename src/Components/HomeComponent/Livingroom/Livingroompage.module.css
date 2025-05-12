@@ -33,3 +33,34 @@
 .shopnowtxt{
     text-decoration: underline;
 }
+@media (max-width: 768px) {
+    .Parentcont {
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+        padding: 10px; 
+    }
+    .cont2 {
+        gap: 15px;
+        padding: 10px; 
+    }
+    .halfcont1 {
+        font-size: 2rem; 
+        text-align: center; 
+    }
+    .halfcont2 {
+        font-size: 0.95rem; 
+        text-align: center; 
+    }
+    .bluetxt {
+        font-size: 1rem; 
+        text-align: center; 
+    }
+    .shopnowtxt {
+        text-align: center; 
+        font-size: 1rem;
+    }
+    .cont1 img {
+        width: 100%;
+        height: auto; 
+    }
+}

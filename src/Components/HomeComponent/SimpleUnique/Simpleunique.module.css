@@ -30,3 +30,20 @@ align-items: center;
 .right p{
     color: gray;
 }
+@media (max-width: 768px) {
+    .textContainer {
+        flex-direction: column; 
+        width: 90%; 
+        gap: 20px; 
+        text-align: center; 
+    }
+    .left span {
+        font-size: 32px; 
+    }
+    .right span {
+        font-size: 1rem; 
+    }
+    .right p {
+        font-size: 0.95rem; 
+    }
+}

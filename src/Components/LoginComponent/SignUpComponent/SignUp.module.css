@@ -38,3 +38,19 @@
     cursor: pointer;
 
 }
+@media (max-width: 768px){
+    .SignUpParent{
+     overflow: hidden;
+ 
+    }
+     .SignUpParent .imgdiv{
+         position: relative;
+     }
+     .inputParent{
+         position: absolute;
+         background-color: gray;
+         opacity: 0.8;
+         left: 0;
+         padding: 5px 0;
+     }
+ }

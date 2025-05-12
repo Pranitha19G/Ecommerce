@@ -30,7 +30,10 @@
     display: flex;
     gap: 40px;
   }
-  
+  .LogoutIcon svg{
+    width: 20px;
+    /* font-size: 10px; */
+  }
   .navItems a {
     text-decoration: none;
     cursor: pointer;
@@ -45,6 +48,7 @@
   .icons {
     display: flex;
     gap: 20px;
+    align-items: center;
   }
   
   .hamburger {
@@ -54,6 +58,13 @@
   }
   .cartParent{
     position: relative;
+    
+  }
+  .iconsParent{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
   }
   .cartParent span{
     position: absolute;
@@ -69,22 +80,47 @@
     position: absolute;
     top: 100%;
   }
+  .closebtn{
+    display: none;
+  }
+  .iconstyling{
+    position: relative;
+  }
+  .numberstyling{
+    position: absolute;
+    top: -15px;
+    right: 10px;
+
+  }
+
   @media (max-width: 768px) {
     .navItems {
+      
+      display: none;
+    }
+  
+     .showMenu {
+      display: flex;
       position: absolute;
-      top: 70px;
-      left: 0;
-      background: white;
-      width: 100%;
       flex-direction: column;
       align-items: center;
       gap: 20px;
       padding: 20px 0;
-      display: none;
+      z-index: 2;
+      width: 100%;
+      background-color: rgb(237, 223, 223);
+      top: 0%;
+      animation: ppp 0.5s ease forwards;
+      height: 100vh;
     }
-  
-    .navItems.showMenu {
-      display: flex;
+    @keyframes ppp {
+      from{
+        left: -100%;
+      }
+      to{
+        left: 0;
+      }
+      
     }
   
     .hamburger {
@@ -93,6 +129,24 @@
   
     .icons {
       gap: 15px;
+    }
+    .navbar{
+      width: 100%;
+    }
+    .hideMenu{
+      animation: ppphide 0.5s ease forwards;
+    }
+    @keyframes ppphide {
+      from{
+        left: 0
+      }
+      to{
+        left: -100%
+      }
+    }
+    .closebtn{
+      display: block;
+
     }
   }
   
