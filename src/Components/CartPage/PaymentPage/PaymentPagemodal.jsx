@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import { useNavigation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -21,7 +21,7 @@ export default function PaymentPagemodal({ showPayment, setShowPayment }) {
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setShowPayment(false);
 
- const navigate= useNavigation();
+ const navigate= useNavigate();
 
   const ordersfun=()=>{
     navigate('/orderdetails')

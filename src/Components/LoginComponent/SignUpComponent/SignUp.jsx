@@ -5,6 +5,7 @@ import styles from "./SignUp.module.css";
 import chair from "../../../assets/Chairpic.png";
 
 export default function SignUp({ setActive }) {
+  const [error, setError] = useState("");
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -19,8 +20,11 @@ export default function SignUp({ setActive }) {
     }));
   };
   const buttonfun = () => {
-    console.log("data", data);
-    localStorage.setItem('signup',JSON.stringify(data));
+    if (data.name === "" || data.email === "" || data.password === "") {
+      setError("Please fill  all the details!");
+    } else {
+      localStorage.setItem("signup", JSON.stringify(data));
+    }
   };
 
   const signinfun = () => {
@@ -70,6 +74,7 @@ export default function SignUp({ setActive }) {
           <Button variant="contained" onClick={() => buttonfun()}>
             SignUp
           </Button>
+          {error}
         </div>
       </div>
     </div>

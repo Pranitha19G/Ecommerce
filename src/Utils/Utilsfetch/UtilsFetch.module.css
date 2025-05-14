@@ -1,0 +1,13 @@
+.parent{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 30px;
+}
+.parent img{
+    width: 100px;
+}
+.parent button{
+    width: 100px;
+    height: 50px;
+}

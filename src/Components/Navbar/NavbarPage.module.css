@@ -90,8 +90,19 @@
     position: absolute;
     top: -15px;
     right: 10px;
-
   }
+  .faUsericon{
+     position: relative;
+  }
+  .yourdetails{
+    position: absolute;
+    background-color: orange;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
 
   @media (max-width: 768px) {
     .navItems {

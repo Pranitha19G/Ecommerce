@@ -5,15 +5,25 @@ import styles from "./Subtotal.module.css";
 export default function Subtotal({setShowPayment}) {
   const getcartData = JSON.parse(localStorage.getItem("cartData"));
 
-  const grandTotal = getcartData.reduce((acc, val) => {
+  const grandTotal = getcartData?.reduce((acc, val) => {
     console.log("val", acc);
     
     return acc + Number(val.price);
   },0);
 
   const modalfun=()=>{
-    setShowPayment((prev)=>!prev)
+    setShowPayment((prev)=>!prev);
+
+    const gettingCartDetails= JSON.parse(localStorage.getItem("cartData"));
+    localStorage.setItem("orderdetails",JSON.stringify(gettingCartDetails));
+     const clearingcartData=setTimeout(()=>{
+       localStorage.removeItem("cartData")
+    },2000)
+    return ()=>{
+      clearInterval(clearingcartData)
+    }
   }
+
 
   return (
     <div className={styles.Parent}>

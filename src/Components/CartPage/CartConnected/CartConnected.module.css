@@ -1,6 +1,26 @@
-.cartpage{
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 10px;
-    height: 100vh;
+.cartpage {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10px;
+  height: 100vh;
+}
+.yourCart{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  height: 100vh;
+}
+.gotoshop{
+  color: blue;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .cartpage {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
 }

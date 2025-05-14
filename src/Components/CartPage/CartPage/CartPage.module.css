@@ -1,11 +1,27 @@
 
 .priceContainer{
-    display: flex ;
-    flex-direction: row;
-    justify-content: space-between;
+    display: grid ;
     align-items: center;
+    grid-template-columns:  repeat(5, 1fr);
     gap: 10px;
 }
 .priceContainer img{
     width: 100px;
+}
+.parent{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:768px) {
+    .priceContainer img{
+        width: 50px;
+    }
+    .priceContainer {
+     font-size:xx-small;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr 1fr  1fr;
+     width: 80%;
+     text-align: center;
+    }
 }

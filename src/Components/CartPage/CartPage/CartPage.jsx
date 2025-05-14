@@ -3,24 +3,26 @@ import styles from "./CartPage.module.css";
 
 export default function CartPage() {
   const getcartData = JSON.parse(localStorage.getItem("cartData"));
-  const RemoveDuplicates = getcartData.filter(
+  const RemoveDuplicates = getcartData?.filter(
     (item, index, self) =>
       index ===
       self.findIndex((item2) => item2.product_name === item.product_name)
   );
   console.log("gd", getcartData);
-  const productCount = getcartData.reduce((acc, val) => {
-    acc[val.product_name] = (acc[val.product_name] || 0) + 1;
+  const productCount =
+    getcartData &&
+    getcartData.reduce((acc, val) => {
+      acc[val.product_name] = (acc[val.product_name] || 0) + 1;
 
-    return acc;
-  }, {});
+      return acc;
+    }, {});
   console.log("pc", productCount);
-  const keys = Object.keys(productCount);
-  
+  const keys = productCount && Object.keys(productCount);
+
   return (
     <div className={styles.Parent}>
       {RemoveDuplicates?.map((items, i) => (
-        <div className={styles.priceContainer}>
+        <div className={styles.priceContainer} key={i}>
           <div>
             <img src={items.products_image} alt="img" />
           </div>

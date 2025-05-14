@@ -6,6 +6,7 @@ import Button from "@mui/material/Button";
 import chairimg from "../../../assets/Chairpic.png";
 
 export default function Signin({ setActive }) {
+   const [wrong, setWrong]=useState("")
   const navigate= useNavigate();
 
   const [message, setMessage]=useState("")
@@ -24,12 +25,15 @@ export default function Signin({ setActive }) {
   const buttonfun=()=>{
     console.log("data",data);
     const getData= JSON.parse(localStorage.getItem('signup'));
-    console.log("getdata",getData.email);
-    if(getData && getData.email===data.email&& getData.password===data.password){
+    if(getData && getData?.email===data?.email&& getData?.password===data?.password){
       setMessage("Login Succesful")
+      console.log("success");
+      
     }
     else{
-      setMessage("Login Failed")
+      console.log("ttt");
+      
+      setMessage("Login Failed!")
     }
   }
   useEffect(()=>{
@@ -77,6 +81,7 @@ export default function Signin({ setActive }) {
           <Button variant="contained" onClick={() => buttonfun()}>
             SignIn
           </Button>
+          {message}
         </div>
       </div>
     </div>

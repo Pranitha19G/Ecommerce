@@ -28,6 +28,7 @@ export default function NavbarPage() {
   const successdata = localStorage.getItem("login");
   const [activelink, setActivelink] = useState("");
   const { wishListArray } = useContext(WishListContext);
+  const [dropDownShow, setDropDownShow]=useState(false)
 
   const Location = useLocation();
   console.log("location", Location.pathname);
@@ -60,6 +61,12 @@ export default function NavbarPage() {
  const wishListFun=()=>{
   navigation("/wishList")
  }
+ 
+ const orderPage=()=>{
+  navigation("/orderdetails")
+ }
+
+
   return (
     <div className={styles.navParent}>
       <nav className={styles.navbar}>
@@ -129,7 +136,10 @@ export default function NavbarPage() {
           </div>
           {show ? (
             <div className={styles.iconsParent}>
+              <div className={styles.faUsericon} onMouseEnter={()=>(setDropDownShow(true))} onMouseLeave={()=>(setDropDownShow(false))}>
               <FontAwesomeIcon icon={faUser} />
+              {dropDownShow?<div className={styles.yourdetails} onClick={()=>orderPage()}>your orders</div>:""}
+              </div>
               <div className={styles.cartParent} onClick={() => cartPage()}>
                 <FontAwesomeIcon icon={faCartShopping} />
                 <span>{cartlength?.length}</span>

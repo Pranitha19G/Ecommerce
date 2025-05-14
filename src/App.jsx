@@ -1,6 +1,6 @@
 import React from "react";
 import NavbarPage from "./Components/Navbar/NavbarPage";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Router, Routes, useLocation } from "react-router-dom";
 import HomepageConnected from "./Components/HomepageConnected/HomepageConnected";
 import Footerdiv from "./Components/Footer/Footerdiv";
 import ShopComponentConnected from "./Components/ShopComponent/ShopComponentConnected/ShopComponentConnected";
@@ -17,6 +17,9 @@ import ProductDetails from "./Components/ShopComponent/ProductDetails/ProductDet
 import WishListContextprovider from "./Components/Contexts/WishListContext/WishListContextprovider";
 import WishList from "./Components/CartPage/WishList/WishList";
 import OrderDetails from "./Components/OrderDetails/OrderDetails";
+import UtilsFetch from "./Utils/Utilsfetch/UtilsFetch";
+import UtilsContextPro from "./Utils/UtilsContext/UtilsContextPro";
+import CartPage1 from "./Utils/CartPage/CartPage1";
 
 function App() {
   const location = useLocation();
@@ -24,31 +27,33 @@ function App() {
 
   const isLogin = location.pathname === "/Login";
   return (
-    <>
     <WishListContextprovider>
-    <ShopContextprovider>
-      <CartContextprovider>
-        {isLogin ? "" : <NavbarPage />}
-        <CategoryContextprovider>
-          <Routes>
-            <Route path="/" element={<HomepageConnected />}></Route>
-            <Route path="/shop" element={<ShopComponentConnected />}></Route>
-            <Route path="/blog" element={<BlogConnected />}></Route>
-            <Route path="/contact" element={<ContactpageConnected />}></Route>
-            <Route path="/Login" element={<LoginComponentConnected />}></Route>
-            <Route path="/cartpage" element={<CartConnected />}></Route>
-            <Route path="/productDetails/:id" element={<ProductDetails/>}></Route>
-            <Route path="/wishList" element={<WishList/>}></Route>
-            <Route path="/orderdetails" element={<OrderDetails/>}></Route>
-
-
-          </Routes>
-        </CategoryContextprovider>
-        {isLogin ? "" : <Footerdiv />}
-      </CartContextprovider>
+      <ShopContextprovider>
+        <CartContextprovider>
+          {isLogin ? "" : <NavbarPage />}
+          <CategoryContextprovider>
+            <Routes>
+              <Route path="/" element={<HomepageConnected />}></Route>
+              <Route path="/shop" element={<ShopComponentConnected />}></Route>
+              <Route path="/blog" element={<BlogConnected />}></Route>
+              <Route path="/contact" element={<ContactpageConnected />}></Route>
+              <Route
+                path="/Login"
+                element={<LoginComponentConnected />}
+              ></Route>
+              <Route path="/cartpage" element={<CartConnected />}></Route>
+              <Route
+                path="/productDetails/:id"
+                element={<ProductDetails />}
+              ></Route>
+              <Route path="/wishList" element={<WishList />}></Route>
+              <Route path="/orderdetails" element={<OrderDetails />}></Route>
+            </Routes>
+          </CategoryContextprovider>
+          {isLogin ? "" : <Footerdiv />}
+        </CartContextprovider>
       </ShopContextprovider>
-      </WishListContextprovider>
-    </>
+    </WishListContextprovider>
   );
 }
 
