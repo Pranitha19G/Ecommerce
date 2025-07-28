@@ -21,7 +21,7 @@ import LavishHomeHotel6PieceTowelSet from "../assets/home/LavishHomeHotel6PieceT
 import WakefitOrthopedicMemoryFoamMattress from "../assets/home/WakefitOrthopedicMemoryFoamMattress.png";
 import UrbanLadderSolidWoodNightstand from "../assets/home/UrbanLadderSolidWoodNightstand.png";
 import BeautyrestLuxuryFirmTwinHybridMattress from "../assets/home/BeautyrestLuxuryFirmTwinHybridMattress.png";
-import Modena11SetOf5BedroomFurniture from "../assets/home/Modena11SetOf5BedroomFurniture.png";
+// import Modena11SetOf5BedroomFurniture from "../assets/home/Modena11SetOf5BedroomFurniture.png";
 import SetOf2NightstandsWithChargingStation from "../assets/home/SetOf2NightstandsWithChargingStation.png";
 import ULTRASHINEHOMEDECORMetalWallArtMountainWithDeer from "../assets/home/ULTRASHINEHOMEDECORMetalWallArtMountainWithDeer.png";
 import QueenSizeBedFrame from "../assets/home/QueenSizeBedFrame.png";
@@ -382,18 +382,18 @@ export const products = [
   },
 
 
-  {
-    id: 29,
-    category: "Bed Room",
-    product_name: "Modena 11: Set of 5 Bed Room Furniture",
-    products_image: Modena11SetOf5BedroomFurniture,
-    products_image_url: Modena11SetOf5BedroomFurniture,
-    description: "A comprehensive Bed Room set including a bed, wardrobe, and nightstands in a modern design.",
-    price: "84994",
-    dimension: "Various (Set of 5)",
-    rating: 4.7,
-    users: 120
-  },
+  // {
+  //   id: 29,
+  //   category: "Bed Room",
+  //   product_name: "Modena 11: Set of 5 Bed Room Furniture",
+  //   products_image: Modena11SetOf5BedroomFurniture,
+  //   products_image_url: Modena11SetOf5BedroomFurniture,
+  //   description: "A comprehensive Bed Room set including a bed, wardrobe, and nightstands in a modern design.",
+  //   price: "84994",
+  //   dimension: "Various (Set of 5)",
+  //   rating: 4.7,
+  //   users: 120
+  // },
   {
     id: 30,
     category: "Bed Room",

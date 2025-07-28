@@ -22,6 +22,21 @@
 .wishlist img {
   width: 100px;
 }
+.yourCart{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+}
+.gotoshop{
+  color: blue;
+  cursor: pointer;
+}
+
+
 @media (max-width: 768px) {
   .wishListContainer {
     overflow: hidden;
